@@ -55,6 +55,18 @@ public class PrimeiroTeste {
 		java = Boolean.valueOf(argumentos[4]);
 		mesesDeTrabalho = Integer.valueOf(argumentos[5]);
 	}
+	
+	private static void imprimir() {
+		System.out.println("Nome: " + nome);
+		System.out.println("Sobrenome: " + sobrenome);
+		System.out.println("Idade: " + idade);
+		System.out.println("Ano de nascimento: " + calcularAnoNascimento(idade));
+		System.out.println("Salario: " + salario);
+		System.out.println("Salario total: " + calcularSalarioTotal(salario, mesesDeTrabalho));
+		System.out.println("DevJava: " + java);
+		System.out.println("Situação: " + definirSituacao(idade));
+		System.out.println("Status: " + definirStatus(calcularSalarioTotal(salario, mesesDeTrabalho)));
+	}
 		
 	public static void main(String[] args) {
 		System.out.println("Hello, World!");
@@ -82,6 +94,8 @@ public class PrimeiroTeste {
 			String status = definirStatus(salarioTotal);
 						
 			// output
+			imprimir();
+			/*
 			System.out.println("Nome: " + nome);
 			System.out.println("Sobrenome: " + sobrenome);
 			System.out.println("Idade: " + idade);
@@ -91,6 +105,7 @@ public class PrimeiroTeste {
 			System.out.println("DevJava: " + java);
 			System.out.println("Situação: " + situacao);
 			System.out.println("Status: " + status);
+			*/
 		} 
 		
 		else{
