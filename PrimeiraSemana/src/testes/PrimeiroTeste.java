@@ -57,15 +57,18 @@ public class PrimeiroTeste {
 	}
 	
 	private static void imprimir() {
+		float salarioTotal = calcularSalarioTotal(salario, mesesDeTrabalho);
+		
 		System.out.println("Nome: " + nome);
 		System.out.println("Sobrenome: " + sobrenome);
 		System.out.println("Idade: " + idade);
 		System.out.println("Ano de nascimento: " + calcularAnoNascimento(idade));
 		System.out.println("Salario: " + salario);
-		System.out.println("Salario total: " + calcularSalarioTotal(salario, mesesDeTrabalho));
+		System.out.println("Salario total: " + salarioTotal);
 		System.out.println("DevJava: " + java);
 		System.out.println("Situação: " + definirSituacao(idade));
-		System.out.println("Status: " + definirStatus(calcularSalarioTotal(salario, mesesDeTrabalho)));
+		//System.out.println("Status: " + definirStatus(calcularSalarioTotal(salario, mesesDeTrabalho)));
+		System.out.println("Status: " + definirStatus(salarioTotal));
 	}
 		
 	public static void main(String[] args) {
@@ -88,10 +91,10 @@ public class PrimeiroTeste {
 			*/
 			
 			// processamento
-			int anoNascimento = calcularAnoNascimento(idade);
-			float salarioTotal = calcularSalarioTotal(salario, mesesDeTrabalho);
-			String situacao = definirSituacao(idade);
-			String status = definirStatus(salarioTotal);
+			//int anoNascimento = calcularAnoNascimento(idade);
+			//float salarioTotal = calcularSalarioTotal(salario, mesesDeTrabalho);
+			//String situacao = definirSituacao(idade);
+			//String status = definirStatus(salarioTotal);
 						
 			// output
 			imprimir();
