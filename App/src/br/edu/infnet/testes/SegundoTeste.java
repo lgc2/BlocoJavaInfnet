@@ -1,7 +1,21 @@
 package br.edu.infnet.testes;
 
+import java.util.Scanner;
+
 public class SegundoTeste {
 	public static void main(String[] args) {
+		
+		// input com Scanner
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Informe o seu nome: ");
+		String nome = input.next();
+		
+		System.out.println("Informe a sua idade: ");
+		int idade = input.nextInt();
+		
+		System.out.println("Informe o seu salário: ");
+		float salario = input.nextFloat();
 		
 		// input
 		int qtde = Integer.valueOf(args[0]);
@@ -13,49 +27,31 @@ public class SegundoTeste {
 			System.out.println("O valor " + qtde + " é ímpar.");
 		}
 		
-		/*
-		if(qtde == 1) {
-			System.out.println("LG");
-		} else {
-			if(qtde == 2) {
-				System.out.println("LG");
-				System.out.println("LG");
-			} else {
-				if(qtde == 3) {
-					System.out.println("LG");
-					System.out.println("LG");
-					System.out.println("LG");
-				}
-			}
-		
-		}
-		*/
-		
 		
 		//FOR
 		//for(inicializacao;condicao;incremento) {}
 		for(int i = 0; i < qtde; i++) {
-			System.out.println((i + 1) + " --> " + "FOR: Luiz Gustavo Coutinho Carvalho");
+			System.out.println((i + 1) + " --> " + "FOR: " + nome + " - " + idade + " - " + salario);
 		}
 		
 		
 		//WHILE
 		int j = 0;
 		while (j < qtde) {
-			System.out.println((j + 1) + " --> " + "WHILE: Luiz Gustavo Coutinho Carvalho");
+			System.out.println((j + 1) + " --> " + "WHILE: " + nome + " - " + idade + " - " + salario);
 			j++;
 		}
 		
 		//DO/WHILE
 		int k = 0;
 		do {
-			System.out.println((k + 1) + " --> " + "DO/WHILE: Luiz Gustavo Coutinho Carvalho");
+			System.out.println((k + 1) + " --> " + "DO/WHILE: " + nome + " - " + idade + " - " + salario);
 			k++;
 		}
 		while (k < qtde);
 		
 		
-		
+		input.close();
 		
 		
 	}
