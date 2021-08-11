@@ -10,14 +10,12 @@ public class TP01 {
 	
 	private final static int QTDE_ALUNOS = 100;
 	
-	private static void impressao(int posicao) {
-		System.out.printf("Nome do aluno: %s\nNota da AV1: %.2f\nNota da AV2: %.2f\n", 
-				alunos[posicao], av1[posicao], av2[posicao]);
-		
-		float media = (av1[posicao] + av2[posicao]) / 2;
-		System.out.printf("Média final : %.2f\n", media);
-		
-		String situacao;
+	private static float media(float av1, float av2) {
+		float media = (av1 + av2) / 2;
+		return media;
+	}
+	
+	private static void situacao(float media) {
 		if (media < 4) {
 			System.out.println("Situação: Reprovado.");
 		} else if (media < 7) {
@@ -25,6 +23,19 @@ public class TP01 {
 		} else {
 			System.out.println("Situação: Aprovado.");
 		}
+	}
+	
+	private static void impressao(int posicao) {
+		System.out.printf("Nome do aluno: %s\nNota da AV1: %.2f\nNota da AV2: %.2f\n", 
+				alunos[posicao], av1[posicao], av2[posicao]);
+		
+		float media = media(av1[posicao], av2[posicao]);
+		
+		System.out.println("Média final: " + media);
+		
+		situacao(media);
+				
+		System.out.println("---------------------------------------");
 	}
 	
 	public static void main(String[] args) {
@@ -65,45 +76,12 @@ public class TP01 {
 				System.out.println("Informe o código do aluno: ");
 				int codigo = in.nextInt();
 				
-				/*
-				System.out.printf("Nome do aluno: %s\nNota da AV1: %.2f\nNota da AV2: %.2f\n", 
-						alunos[codigo], av1[codigo], av2[codigo]);
-				
-				float mediaCaso2 = (av1[codigo] + av2[codigo]) / 2;
-				System.out.printf("Média final : %.2f\n", mediaCaso2);
-				
-				String situacaoCaso2;
-				if (mediaCaso2 < 4) {
-					System.out.println("Situação: Reprovado.");
-				} else if (mediaCaso2 < 7) {
-					System.out.println("Situação: Prova final.");
-				} else {
-					System.out.println("Situação: Aprovado.");
-				}
-				*/
 				impressao(codigo);
 				break;
 				
 			case "3":
 				for (int i = 0; i < index; i++) {
-					/*
-					System.out.printf("Nome do aluno: %s\nNota da AV1: %.2f\nNota da AV2: %.2f\n", 
-							alunos[i], av1[i], av2[i]);
-					
-					float mediaCaso3 = (av1[i] + av2[i]) / 2;
-					System.out.printf("Média final : %.2f\n", mediaCaso3);
-					
-					String situacaoCaso3;
-					if (mediaCaso3 < 4) {
-						System.out.println("Situação: Reprovado.");
-					} else if (mediaCaso3 < 7) {
-						System.out.println("Situação: Prova final.");
-					} else {
-						System.out.println("Situação: Aprovado.");
-					}
-					
-					System.out.println("---------------------------------------");
-				*/
+				
 					impressao(i);
 				}			
 				
@@ -130,59 +108,3 @@ public class TP01 {
 								
 		}
 }
-
-/*
-if ("1".equals(opcao)) {
-				System.out.println("Cadastrando...");
-			} else if ("2".equals(opcao)) {
-				System.out.println("Consultando individual...");
-			} else if ("3".equals(opcao)) {
-				System.out.println("Consultando turma...");
-			} else if ("4".equals(opcao)) {
-				System.out.println("Saindo...");
-			} else {
-				System.out.println("Opção inválida!!!");
-			}
-*/
-//System.out.println("Digite o número da oção desejada: ");
-		//int opcao = in.nextInt();
-		
-		/*
-		while (opcao != -1) {
-			if (opcao == 1) {
-				System.out.println("Informe nome do aluno: ");
-				alunos[] = in.next();
-			}
-		}
-		*/
-/*
-alunos = new String[QTDE_ALUNOS];
-av1 = new double[QTDE_ALUNOS];
-av2 = new double[QTDE_ALUNOS];
-
-int qtde = 1;
-
-
-
-
-while (opcao != -1) {
-	if (opcao == 1) {
-		for(int i = 0; i < qtde; i++) {
-			System.out.println("Informe o nome do aluno: ");
-			alunos[i] = in.next();
-		}
-	}
-} 
-*/
-
-/*
-if(qtde < QTDE_ALUNOS) {
-	alunos = new String[qtde];
-	av1 = new double[qtde];
-	av2 = new double[qtde];
-	
-	for(int i = 0; i < qtde; i++) {
-		System.out.println("Informe o nome do aluno: ");
-		alunos[i] = in.next();
-	}
-	*/
