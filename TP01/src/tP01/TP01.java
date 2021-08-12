@@ -60,23 +60,34 @@ public class TP01 {
 			
 			switch (opcao) {
 			case "1":
-				System.out.println("Informe o nome do aluno: ");
-				alunos[index] = in.next();
-				
-				System.out.println("Informe a nota da avaliação 1: ");
-				av1[index] = in.nextFloat();
-				
-				System.out.println("Informe a nota da avaliação 2: ");
-				av2[index] = in.nextFloat();
-				
-				index += 1;
+				if(index < QTDE_ALUNOS) {
+					System.out.println("Informe o nome do aluno: ");
+					alunos[index] = in.next();
+					
+					System.out.println("Informe a nota da avaliação 1: ");
+					av1[index] = in.nextFloat();
+					
+					System.out.println("Informe a nota da avaliação 2: ");
+					av2[index] = in.nextFloat();
+					
+					System.out.println("Aluno cadastrado com sucesso.");
+					System.out.println("Código de registro do aluno: " + index);
+					
+					index += 1;
+				} else {
+					System.out.println("Não é possível inserir um novo registro.");
+				}
 				break;
 				
 			case "2":
 				System.out.println("Informe o código do aluno: ");
 				int codigo = in.nextInt();
 				
-				impressao(codigo);
+				if(codigo >= 0 && codigo < index) {
+					impressao(codigo);
+				} else {
+					System.out.println("Código inválido.");
+				}
 				break;
 				
 			case "3":
