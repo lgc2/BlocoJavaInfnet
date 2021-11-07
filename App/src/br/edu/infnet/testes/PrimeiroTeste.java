@@ -42,9 +42,9 @@ public class PrimeiroTeste {
 	
 	private static String definirStatus(float osalarioTotal) {
 		if(osalarioTotal > 1000) {
-			return "Estável";
+			return "Estï¿½vel";
 		}
-		return "Instável";
+		return "Instï¿½vel";
 	}
 	
 	private static void tratarParametros(String[] argumentos) {
@@ -66,7 +66,7 @@ public class PrimeiroTeste {
 		System.out.println("Salario: " + salario);
 		System.out.println("Salario total: " + salarioTotal);
 		System.out.println("DevJava: " + java);
-		System.out.println("Situação: " + definirSituacao(idade));
+		System.out.println("Situaï¿½ï¿½o: " + definirSituacao(idade));
 		//System.out.println("Status: " + definirStatus(calcularSalarioTotal(salario, mesesDeTrabalho)));
 		System.out.println("Status: " + definirStatus(salarioTotal));
 	}
@@ -106,7 +106,7 @@ public class PrimeiroTeste {
 			System.out.println("Salario: " + salario);
 			System.out.println("Salario total: " + salarioTotal);
 			System.out.println("DevJava: " + java);
-			System.out.println("Situação: " + situacao);
+			System.out.println("Situaï¿½ï¿½o: " + situacao);
 			System.out.println("Status: " + status);
 			*/
 		} 
