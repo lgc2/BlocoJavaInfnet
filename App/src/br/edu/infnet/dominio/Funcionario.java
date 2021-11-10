@@ -2,13 +2,11 @@ package br.edu.infnet.dominio;
 
 import br.edu.infnet.auxiliar.Constante;
 
-public class Funcionario {
+public abstract class Funcionario {
 
-    public String nome;
-    public int idade;
-    public float salario;
-    public float bonus;
-    public float desconto;
+    private String nome;
+    private int idade;
+    private float salario;
 
     protected int posicao;
 
@@ -27,9 +25,7 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    private float calcularSalarioLiquido() {
-        return salario + bonus - desconto;
-    }
+    public abstract float calcularSalarioLiquido();
 
     private String obterSituacao(float salarioLiquido) {
         String situacao = salarioLiquido > Constante.VALOR ? "Rico" : "Pobre";
@@ -55,8 +51,30 @@ public class Funcionario {
                 "nome=\"" + nome + "\"" +
                 ", idade=" + idade +
                 ", salario=" + salario +
-                ", bonus=" + bonus +
-                ", desconto=" + desconto +
                 '}';
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
     }
 }

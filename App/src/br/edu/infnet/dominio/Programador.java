@@ -2,21 +2,21 @@ package br.edu.infnet.dominio;
 
 public class Programador extends Funcionario{
 
-    public boolean fullstack;
-    public String linguagem;
+    private boolean fullstack;
+    private String linguagem;
 
     public Programador() {
-        this.nome = "Javeiro";
+        this.setNome("Javeiro");
     }
 
     public Programador(String nome, int idade) {
-        this.nome = nome;
-        this.idade = idade;
+        this.setNome(nome);
+        this.setIdade(idade);
     }
 
     public Programador(String nome, int idade, float salario, boolean fullstack, String linguagem) {
         this(nome, idade);
-        this.salario = salario;
+        this.setSalario(salario);
         this.fullstack = fullstack;
         this.linguagem = linguagem;
     }
@@ -28,8 +28,8 @@ public class Programador extends Funcionario{
         return "java".equalsIgnoreCase(linguagem) ? 2000 : 750;
     }
 
-    private float calcularSalarioLiquido() {
-        return this.salario + this.calcularSalarioFullstack() + this.calcularSalarioLinguagem();
+    public float calcularSalarioLiquido() {
+        return this.getSalario() + this.calcularSalarioFullstack() + this.calcularSalarioLinguagem();
     }
 
     public String obterSituacao(float salarioLiquido) {
@@ -49,15 +49,31 @@ public class Programador extends Funcionario{
 
         System.out.printf("[%d] %s - %d anos || R$%.2f : %s\n",
                 posicao,
-                nome,
-                idade,
+                this.getNome(),
+                this.getIdade(),
                 calculoSalarial,
                 obterSituacao(calculoSalarial)
         );
     }
 
+    public boolean getFullstack() {
+        return fullstack;
+    }
+
+    public void setFullstack(boolean fullstack) {
+        this.fullstack = fullstack;
+    }
+
+    public String getLinguagem() {
+        return linguagem;
+    }
+
+    public void setLinguagem(String linguagem) {
+        this.linguagem = linguagem;
+    }
+
     @Override
     public String toString() {
-        return "Sou o programador " + nome;
+        return "Sou o programador " + this.getNome();
     }
 }
