@@ -8,7 +8,7 @@ public abstract class Funcionario {
     private int idade;
     private float salario;
 
-    protected int posicao;
+    protected static int posicao;
 
 
     public Funcionario() { // Construtor padrão
@@ -37,7 +37,7 @@ public abstract class Funcionario {
         float calculoSalarial = calcularSalarioLiquido();
 
         System.out.printf("[%d] %s - %d anos || R$%.2f : %s\n",
-                posicao,
+                posicao++,
                 nome,
                 idade,
                 calculoSalarial,
