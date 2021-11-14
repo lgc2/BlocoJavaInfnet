@@ -1,18 +1,18 @@
 package br.edu.infnet.testes;
 
 import br.edu.infnet.auxiliar.Constante;
-import br.edu.infnet.dominio.Administrativo;
-import br.edu.infnet.dominio.Funcionario;
-import br.edu.infnet.dominio.Programador;
+import br.edu.infnet.dominio.Professor;
+import br.edu.infnet.dominio.Pessoa;
+import br.edu.infnet.dominio.Aluno;
 
 import java.util.Scanner;
 
-public class TP03Teste {
+public class TP02Teste {
 
-    private static Funcionario[] funcionarios;
+    private static Pessoa[] pessoas;
 
     public static void main(String[] args) {
-        funcionarios = new Funcionario[Constante.QTDE];
+        pessoas = new Pessoa[Constante.QTDE];
 
         Scanner in = new Scanner(System.in);
 
@@ -21,40 +21,44 @@ public class TP03Teste {
         int index = 0;
 
         do {
-            System.out.println("[1] Cadastrar Administrativo");
-            System.out.println("[2] Cadastrar Programador");
+            System.out.println("*************MENU*************");
+            System.out.println("[1] Cadastrar Professor");
+            System.out.println("[2] Cadastrar Aluno");
             System.out.println("[3] Consultar um");
             System.out.println("[4] Consultar todos");
             System.out.println("[9] Sair");
-            System.out.print("Informe a opção desejada: ");
+            System.out.println("******************************");
+            System.out.println("Informe a opção desejada: ");
 
             opcao = in.next();
 
             switch (opcao) {
                 case "1":
                     if(index < Constante.QTDE) {
-                        Administrativo adm = new Administrativo();
+                        Professor professor = new Professor();
 
                         System.out.println("Informe o seu nome: ");
-                        adm.setNome(in.next());
+                        professor.setNome(in.next());
 
                         System.out.println("Informe a sua idade:");
-                        adm.setIdade(in.nextInt());
+                        professor.setIdade(in.nextInt());
 
-                        System.out.println("Informe o seu salário:");
-                        adm.setSalario(in.nextFloat());
+//                        System.out.println("Informe o seu salário:");
+//                        professor.setSalario(in.nextFloat());
+//
+//                        System.out.println("Informe o seu bônus:");
+//                        professor.setBonus(in.nextFloat());
+//
+//                        System.out.println("Informe o seu desconto:");
+//                        professor.setDesconto(in.nextFloat());
 
-                        System.out.println("Informe o seu bônus:");
-                        adm.setBonus(in.nextFloat());
+                        professor.setPosicao(index);
 
-                        System.out.println("Informe o seu desconto:");
-                        adm.setDesconto(in.nextFloat());
-
-                        funcionarios[index] = adm;
+                        pessoas[index] = professor;
 
                         System.out.println("-----------------------------------------");
-                        System.out.println("Funcionário cadastrado com sucesso:");
-                        funcionarios[index].impressao();
+                        System.out.println("Professor cadastrado com sucesso:");
+                        pessoas[index].impressao();
                         System.out.println("-----------------------------------------");
 
                         index++;
@@ -65,28 +69,30 @@ public class TP03Teste {
 
                 case "2":
                     if(index < Constante.QTDE) {
-                        Programador prog = new Programador();
+                        Aluno aluno = new Aluno();
 
                         System.out.println("Informe o seu nome: ");
-                        prog.setNome(in.next());
+                        aluno.setNome(in.next());
 
                         System.out.println("Informe a sua idade:");
-                        prog.setIdade(in.nextInt());
+                        aluno.setIdade(in.nextInt());
 
-                        System.out.println("Informe o seu salário:");
-                        prog.setSalario(in.nextFloat());
+//                        System.out.println("Informe o seu salário:");
+//                        aluno.setSalario(in.nextFloat());
+//
+//                        System.out.println("Informe se é fullstack: ");
+//                        aluno.setFullstack(in.nextBoolean());
+//
+//                        System.out.println("Informe a sua linguagem: ");
+//                        aluno.setLinguagem(in.next());
 
-                        System.out.println("Informe se é fullstack: ");
-                        prog.setFullstack(in.nextBoolean());
+                        aluno.setPosicao(index);
 
-                        System.out.println("Informe a sua linguagem: ");
-                        prog.setLinguagem(in.next());
-
-                        funcionarios[index] = prog;
+                        pessoas[index] = aluno;
 
                         System.out.println("-----------------------------------------");
-                        System.out.println("Funcionário cadastrado com sucesso:");
-                        funcionarios[index].impressao();
+                        System.out.println("Aluno cadastrado com sucesso:");
+                        pessoas[index].impressao();
                         System.out.println("-----------------------------------------");
 
                         index++;
@@ -96,10 +102,10 @@ public class TP03Teste {
                     break;
 
                 case "3":
-                    System.out.print("Informe o código do funcionário: ");
+                    System.out.print("Informe o código do docente/discente: ");
                     int codigo = in.nextInt();
                     if(codigo >= 0 && codigo < index) {
-                        funcionarios[codigo].impressao();
+                        pessoas[codigo].impressao();
                     } else {
                         System.out.println("Número de cadastro informado é inválido!");
                     }
@@ -107,7 +113,7 @@ public class TP03Teste {
 
                 case "4":
                     for(int i = 0; i < index; i++) {
-                        funcionarios[i].impressao();
+                        pessoas[i].impressao();
                     }
                     break;
 
