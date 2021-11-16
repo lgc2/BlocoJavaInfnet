@@ -43,14 +43,14 @@ public class TP02Teste {
                         System.out.println("Informe a sua idade:");
                         professor.setIdade(in.nextInt());
 
-//                        System.out.println("Informe o seu salário:");
-//                        professor.setSalario(in.nextFloat());
-//
-//                        System.out.println("Informe o seu bônus:");
-//                        professor.setBonus(in.nextFloat());
-//
-//                        System.out.println("Informe o seu desconto:");
-//                        professor.setDesconto(in.nextFloat());
+                        System.out.println("Informe o seu salário:");
+                        professor.setSalario(in.nextFloat());
+
+                        System.out.println("Informe o seu bônus:");
+                        professor.setBonus(in.nextFloat());
+
+                        System.out.println("Informe o seu desconto:");
+                        professor.setDesconto(in.nextFloat());
 
                         professor.setPosicao(index);
 
@@ -77,14 +77,12 @@ public class TP02Teste {
                         System.out.println("Informe a sua idade:");
                         aluno.setIdade(in.nextInt());
 
-//                        System.out.println("Informe o seu salário:");
-//                        aluno.setSalario(in.nextFloat());
-//
-//                        System.out.println("Informe se é fullstack: ");
-//                        aluno.setFullstack(in.nextBoolean());
-//
-//                        System.out.println("Informe a sua linguagem: ");
-//                        aluno.setLinguagem(in.next());
+                        String modalidade;
+                        do {
+                            System.out.println("Informe a modalidade - EAD ou Presencial:");
+                            modalidade = in.next();
+                            aluno.setMensalidade(modalidade);
+                        } while(!"EAD".equalsIgnoreCase(modalidade) && !"Presencial".equalsIgnoreCase(modalidade));
 
                         aluno.setPosicao(index);
 

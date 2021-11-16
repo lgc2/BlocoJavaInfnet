@@ -5,6 +5,7 @@ import br.edu.infnet.auxiliar.Matricula;
 public class Aluno extends Pessoa {
 
     private int matriculaDoAluno;
+    private String modalidadeDoAluno;
     private float mensalidade;
 
     public Aluno() {
@@ -12,13 +13,12 @@ public class Aluno extends Pessoa {
         this.matriculaDoAluno = matricula.setMatricula();
     }
 
-    public float calcularSalarioLiquido(){return 0.0f;}
-
     public void impressao() {
-        System.out.printf("%d) %s - matrícula número %d\n",
+        System.out.printf("%d) %s - matrícula número %d - mensalidade: R$ %.2f\n",
                 this.getPosicao(),
                 this.getNome(),
-                this.getMatriculaDoAluno()
+                this.getMatriculaDoAluno(),
+                this.getMensalidade()
         );
     }
 
@@ -35,8 +35,15 @@ public class Aluno extends Pessoa {
         return mensalidade;
     }
 
-    public void setMensalidade(float mensalidade) {
-        this.mensalidade = mensalidade;
+    public void setMensalidade(String modalidadeDoAluno) {
+        this.modalidadeDoAluno = modalidadeDoAluno;
+        if("EAD".equalsIgnoreCase(modalidadeDoAluno)) {
+            this.mensalidade = 481.00f;
+        } else if ("Presencial".equalsIgnoreCase(modalidadeDoAluno)) {
+            this.mensalidade = 1200.00f;
+        } else {
+            System.out.println("Modalidade informada não existe!");
+        }
     }
 }
 
